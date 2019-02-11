@@ -1,0 +1,24 @@
+{
+  "successMessages"		       : {
+    "employeeAdd"  		   : "Employee Added Successfully",
+    "noDetails"          :"No Employee Details Found"
+  },
+  "errorMessages"		: {
+    "employee_name"		  : "Employee Name is required",
+    "company_name"  		: "Company Name is required",
+    "employee_id"	      : "Employee ID is required"
+  },
+  "formLabels":{
+    "employee_name":"Employee Name",
+    "company_name":"Company Name",
+    "employee_id":"Employee ID",
+    "actions":"Actions"
+  },
+  "buttons":{
+    "addEmployee":"Add Employees",
+    "delete":"Delete"
+  },
+  "title":{
+    "employee":"Employees App"
+  }
+}
