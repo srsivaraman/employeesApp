@@ -1,0 +1,38 @@
+<div class="card">
+	<div class="card-body">
+		<form [formGroup]="angForm" novalidate>
+			<div class="form-group">
+				<label class="col-md-4">{{labels.formLabels.employee_name}}</label>
+				<input type="text" class="form-control" formControlName="employee_name" #employee_name/>
+			</div>
+			<div *ngIf="angForm.controls['employee_name'].invalid && (angForm.controls['employee_name'].dirty || angForm.controls['employee_name'].touched)" class="alert alert-danger">
+				<div *ngIf="angForm.controls['employee_name'].errors.required">
+					{{labels.errorMessages.employee_name}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4">{{labels.formLabels.company_name}} </label>
+				<input type="text" class="form-control" formControlName="company_name" #company_name />
+			</div>
+			<div *ngIf="angForm.controls['company_name'].invalid && (angForm.controls['company_name'].dirty || angForm.controls['company_name'].touched)" class="alert alert-danger">
+				<div *ngIf="angForm.controls['company_name'].errors.required">
+					{{labels.errorMessages.company_name}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4">{{labels.formLabels.employee_id}}</label>
+				<input type="number" class="form-control" formControlName="employee_id" #employee_id />
+			</div>
+			<div *ngIf="angForm.controls['employee_id'].invalid && (angForm.controls['employee_id'].dirty || angForm.controls['employee_id'].touched)" class="alert alert-danger">
+				<div *ngIf="angForm.controls['employee_id'].errors.required">
+					{{labels.errorMessages.employee_id}}
+				</div>
+			</div>
+			<div class="form-group">
+				<button (click)="addEmployees()"
+				[disabled]="angForm.pristine || angForm.invalid" 
+				class="btn btn-primary">{{labels.buttons.addEmployee}}</button>
+			</div>
+		</form>
+	</div>
+</div>

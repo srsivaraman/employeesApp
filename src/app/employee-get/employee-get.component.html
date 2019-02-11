@@ -1,0 +1,25 @@
+<app-employee-add (getEmployees)="listEmployees($event)" ></app-employee-add>
+<table class="table table-hover">
+	<thead>
+	<tr>
+		<td>{{labels.formLabels.employee_name}}</td>
+		<td>{{labels.formLabels.company_name}}</td>
+		<td>{{labels.formLabels.employee_id}}</td>
+		<td>{{labels.formLabels.actions}}</td>
+	</tr>
+	</thead>
+
+	<tbody>
+		<ng-container *ngIf="employees.length">
+		<tr *ngFor="let employee of employees">
+			<td>{{ employee.employee_name }}</td>
+			<td>{{ employee.company_name }}</td>
+			<td>{{ employee.employee_id }}</td>
+			<td><a (click) = "deleteEmployees(employee._id)" class="btn btn-danger">{{labels.buttons.delete}}</a></td>
+		</tr>
+		</ng-container> 
+		<tr *ngIf="!employees.length">
+			<td colspan="4" class="alignCenter">{{labels.successMessages.noDetails}}</td>
+		</tr>
+	</tbody>
+</table>
